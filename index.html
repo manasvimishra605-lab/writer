@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quillix — Write Beyond Limits</title>
+  <meta name="description" content="Quillix is a beautifully animated writing platform. Draft, edit and publish with the power of flow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒️</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══════════ PRELOADER ═══════════ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <span class="preloader-letter">Q</span>
+      <span class="preloader-letter">u</span>
+      <span class="preloader-letter">i</span>
+      <span class="preloader-letter">l</span>
+      <span class="preloader-letter">l</span>
+      <span class="preloader-letter">i</span>
+      <span class="preloader-letter">x</span>
+    </div>
+    <div class="preloader-bar"><span></span></div>
+  </div>
+
+  <!-- ═══════════ CUSTOM CURSOR ═══════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════ SCROLL PROGRESS ═══════════ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-logo" data-magnetic>
+      <span class="nav-logo-mark">✒</span> Quillix
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#workflow" class="nav-link">Workflow</a>
+      <a href="#voices" class="nav-link">Voices</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#cta" class="btn btn-small btn-primary" data-magnetic>Start Writing</a>
+    </nav>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero">
+      <canvas id="particles"></canvas>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal">
+          <span class="pulse-dot"></span> The writing studio of the future
+        </p>
+        <h1 class="hero-title">
+          <span class="hero-line"><span>Write beyond</span></span>
+          <span class="hero-line"><span class="gradient-text" id="typewriter"></span><span class="caret">|</span></span>
+        </h1>
+        <p class="hero-sub reveal delay-2">
+          Quillix turns the blank page into a playground. Draft faster, edit smarter,
+          and publish everywhere — wrapped in an interface that moves with you.
+        </p>
+        <div class="hero-actions reveal delay-3">
+          <a href="#cta" class="btn btn-primary btn-lg" data-magnetic>
+            Start writing free <span class="btn-arrow">→</span>
+          </a>
+          <a href="#features" class="btn btn-ghost btn-lg" data-magnetic>Explore features</a>
+        </div>
+        <div class="hero-meta reveal delay-4">
+          <div class="avatars">
+            <span class="avatar" style="--h:265">A</span>
+            <span class="avatar" style="--h:180">M</span>
+            <span class="avatar" style="--h:330">J</span>
+            <span class="avatar" style="--h:35">R</span>
+          </div>
+          <p>Loved by <strong>120,000+</strong> writers worldwide</p>
+        </div>
+      </div>
+
+      <div class="hero-card float-slow" aria-hidden="true">
+        <div class="hero-card-dots"><i></i><i></i><i></i></div>
+        <div class="hero-card-lines">
+          <span style="--w:88%"></span>
+          <span style="--w:72%"></span>
+          <span style="--w:94%"></span>
+          <span style="--w:55%"></span>
+          <span style="--w:80%"></span>
+          <span style="--w:38%"></span>
+        </div>
+        <div class="hero-card-badge">✨ 2,431 words</div>
+      </div>
+
+      <a href="#marquee" class="scroll-hint" aria-label="Scroll down">
+        <span class="scroll-hint-wheel"></span>
+      </a>
+    </section>
+
+    <!-- ═══════════ MARQUEE ═══════════ -->
+    <section class="marquee-wrap" id="marquee" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>Novels</span><i>✦</i><span>Essays</span><i>✦</i><span>Screenplays</span><i>✦</i>
+          <span>Poetry</span><i>✦</i><span>Newsletters</span><i>✦</i><span>Blogs</span><i>✦</i>
+          <span>Journals</span><i>✦</i><span>Scripts</span><i>✦</i>
+          <span>Novels</span><i>✦</i><span>Essays</span><i>✦</i><span>Screenplays</span><i>✦</i>
+          <span>Poetry</span><i>✦</i><span>Newsletters</span><i>✦</i><span>Blogs</span><i>✦</i>
+          <span>Journals</span><i>✦</i><span>Scripts</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FEATURES ═══════════ -->
+    <section class="section" id="features">
+      <div class="section-head">
+        <p class="section-eyebrow reveal">Features</p>
+        <h2 class="section-title reveal delay-1">Everything a writer<br /><span class="gradient-text">could dream of</span></h2>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature-card reveal" data-tilt>
+          <div class="feature-icon">⚡</div>
+          <h3>Flow Mode</h3>
+          <p>A distraction-free canvas that fades the world away. Just you, the cursor, and the story pouring out.</p>
+          <span class="feature-glow"></span>
+        </article>
+        <article class="feature-card reveal delay-1" data-tilt>
+          <div class="feature-icon">🧠</div>
+          <h3>Smart Outlines</h3>
+          <p>Drag, drop and reshape your structure. Chapters reorganize themselves with buttery-smooth motion.</p>
+          <span class="feature-glow"></span>
+        </article>
+        <article class="feature-card reveal delay-2" data-tilt>
+          <div class="feature-icon">🎨</div>
+          <h3>Living Themes</h3>
+          <p>Ambient color palettes that shift with the time of day, keeping your workspace alive and inspiring.</p>
+          <span class="feature-glow"></span>
+        </article>
+        <article class="feature-card reveal" data-tilt>
+          <div class="feature-icon">📈</div>
+          <h3>Momentum Stats</h3>
+          <p>Streaks, word sprints and animated progress rings that make hitting your daily goal addictive.</p>
+          <span class="feature-glow"></span>
+        </article>
+        <article class="feature-card reveal delay-1" data-tilt>
+          <div class="feature-icon">🕰️</div>
+          <h3>Time Machine</h3>
+          <p>Every keystroke versioned. Scrub back through your draft's history like rewinding a film.</p>
+          <span class="feature-glow"></span>
+        </article>
+        <article class="feature-card reveal delay-2" data-tilt>
+          <div class="feature-icon">🚀</div>
+          <h3>One-tap Publish</h3>
+          <p>Push to your blog, newsletter or ebook format in a single click. Your words, everywhere at once.</p>
+          <span class="feature-glow"></span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════ STATS ═══════════ -->
+    <section class="stats" id="stats">
+      <div class="stat reveal">
+        <span class="stat-number" data-count="120" data-suffix="K+">0</span>
+        <span class="stat-label">Active writers</span>
+      </div>
+      <div class="stat reveal delay-1">
+        <span class="stat-number" data-count="4" data-suffix="B+">0</span>
+        <span class="stat-label">Words written</span>
+      </div>
+      <div class="stat reveal delay-2">
+        <span class="stat-number" data-count="98" data-suffix="%">0</span>
+        <span class="stat-label">Stay in flow</span>
+      </div>
+      <div class="stat reveal delay-3">
+        <span class="stat-number" data-count="180" data-suffix="+">0</span>
+        <span class="stat-label">Countries</span>
+      </div>
+    </section>
+
+    <!-- ═══════════ WORKFLOW / TIMELINE ═══════════ -->
+    <section class="section" id="workflow">
+      <div class="section-head">
+        <p class="section-eyebrow reveal">Workflow</p>
+        <h2 class="section-title reveal delay-1">From spark<br /><span class="gradient-text">to published</span></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line" id="timelineLine"></div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-body">
+            <h3>Capture the spark</h3>
+            <p>Jot ideas anywhere — they sync instantly and animate into your idea vault, ready when inspiration strikes.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-body">
+            <h3>Shape the story</h3>
+            <p>Outline with fluid drag-and-drop cards. Watch your structure snap into place with satisfying physics.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-body">
+            <h3>Enter the flow</h3>
+            <p>Flow Mode dims everything but the current sentence. Typewriter scrolling keeps your eyes centered.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-body">
+            <h3>Ship it everywhere</h3>
+            <p>Export to web, ebook, PDF or newsletter with one tap — beautifully typeset, every single time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TESTIMONIALS ═══════════ -->
+    <section class="section voices" id="voices">
+      <div class="section-head">
+        <p class="section-eyebrow reveal">Voices</p>
+        <h2 class="section-title reveal delay-1">Writers <span class="gradient-text">love it here</span></h2>
+      </div>
+
+      <div class="carousel reveal delay-2" id="carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <figure class="quote-card">
+            <blockquote>“Quillix made me fall back in love with the blank page. I finished my first novel in four months — the streak animations genuinely kept me going.”</blockquote>
+            <figcaption><span class="avatar" style="--h:265">S</span> Sofia Marek · Novelist</figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>“The Time Machine feature saved a chapter I'd butchered at 2 a.m. Scrubbing back through my edits felt like magic.”</blockquote>
+            <figcaption><span class="avatar" style="--h:180">D</span> Dev Anand · Screenwriter</figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>“I publish my newsletter straight from my draft. No copy-paste, no reformatting. It's the smoothest tool I've ever used.”</blockquote>
+            <figcaption><span class="avatar" style="--h:330">L</span> Lena Osei · Essayist</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PRICING ═══════════ -->
+    <section class="section" id="pricing">
+      <div class="section-head">
+        <p class="section-eyebrow reveal">Pricing</p>
+        <h2 class="section-title reveal delay-1">Simple, honest<br /><span class="gradient-text">pricing</span></h2>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card reveal" data-tilt>
+          <h3>Drifter</h3>
+          <p class="price"><span>$0</span>/forever</p>
+          <ul>
+            <li>Unlimited notes</li>
+            <li>3 active projects</li>
+            <li>Flow Mode</li>
+            <li>Web publishing</li>
+          </ul>
+          <a href="#cta" class="btn btn-ghost" data-magnetic>Start free</a>
+        </article>
+        <article class="price-card price-card-hot reveal delay-1" data-tilt>
+          <div class="price-badge">Most loved</div>
+          <h3>Storyteller</h3>
+          <p class="price"><span>$8</span>/month</p>
+          <ul>
+            <li>Everything in Drifter</li>
+            <li>Unlimited projects</li>
+            <li>Time Machine history</li>
+            <li>Ebook &amp; PDF export</li>
+            <li>Momentum stats</li>
+          </ul>
+          <a href="#cta" class="btn btn-primary" data-magnetic>Go Storyteller</a>
+        </article>
+        <article class="price-card reveal delay-2" data-tilt>
+          <h3>Studio</h3>
+          <p class="price"><span>$20</span>/month</p>
+          <ul>
+            <li>Everything in Storyteller</li>
+            <li>Team workspaces</li>
+            <li>Editorial review flows</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#cta" class="btn btn-ghost" data-magnetic>Build a studio</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="cta" id="cta">
+      <div class="cta-inner reveal">
+        <h2>Your story is waiting.<br /><span class="gradient-text">Start writing it today.</span></h2>
+        <p>Free forever for your first three projects. No credit card, no friction — just flow.</p>
+        <a href="#top" class="btn btn-primary btn-lg" data-magnetic>
+          Open the editor <span class="btn-arrow">→</span>
+        </a>
+      </div>
+      <div class="cta-stars" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <svg class="footer-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"></path>
+    </svg>
+    <div class="footer-inner">
+      <a href="#top" class="nav-logo"><span class="nav-logo-mark">✒</span> Quillix</a>
+      <nav class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#voices">Voices</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <p class="footer-note">© 2026 Quillix. Crafted with motion &amp; love.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
